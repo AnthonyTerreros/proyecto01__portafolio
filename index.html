@@ -6,22 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
         <nav>
-            <span>Anthony Terreros</span>
+            <h3>Anthony Terreros</h3>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre Me</a></li>
-                <li><a href="#">Contactame</a></li>
+                <li><a class="nav__link" href="#">Inicio</a></li>
+                <li><a class="nav__link" href="#">Sobre Mi</a></li>
+                <li><a class="nav__link">Habilidades</a></li>
             </ul>
+            <button class="btn nav__link">Contactame</button>
         </nav>
     </header>
     <div class="app">
         <div class="profile">
             <img src="" alt="Foto de Perfil">
+            <div class="profile__name">
+                <h3>David Terreros</h3>
+                <span>Backend Developer</span>
+            </div>
+            <div class="profile__contacts">
+                <!-- <h3>Contactos</h3> -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contactos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Correo: </th>
+                            <td>danterreros21@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th>Telefono: </th>
+                            <td>+ 593 233 233 2333</td>
+                        </tr>
+                        <tr>
+                            <th>Direccion: </th>
+                            <td>Portete</td>
+                        </tr>
+                        <tr>
+                            <th>Ubicacion: </th>
+                            <td>Guayaquil, Ecuador</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="profile__social-media">
+                <h3>Redes Sociales</h3>
+                <div class="social-medias">
+                    
+                </div>
+            </div>
+            <div class="profile__form">
+                <h3>Contactame</h3>
+                <form id="contact">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="message">Mensaje: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </form>
+                <button>Enviar</button>
+            </div>
         </div>
+
         <div class="content">
             <section>
                 <article>
@@ -29,17 +80,23 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit repellendus recusandae porro numquam delectus nostrum inventore molestias sunt fugit earum, molestiae deleniti tempore nesciunt excepturi obcaecati placeat doloremque tempora!</p>
                 </article>
                 <article>
-                    <h3>Historia Academica</h3>
+                    <h3>Educacion</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestias nulla voluptatem dolore. Eaque totam explicabo quam corporis repellendus, velit rem, laboriosam at assumenda quia qui itaque nesciunt! Explicabo, cupiditate!</p>
                 </article>
-                <article></article>
-                <article></article>
+                <article>
+                    <h3>Experiencia</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non assumenda tenetur nihil blanditiis, laborum corrupti odio. Hic facere vel ipsam, dolor corporis quasi! Sequi quae officia, atque cum praesentium beatae?</p>
+                </article>
+                <article>
+                    <h3>Habilidades</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, hic asperiores. Est veritatis praesentium nemo quas cum, suscipit ipsam eaque dolore hic dolorem cupiditate totam! Nisi cumque omnis quas quibusdam.</p>
+                </article>
             </section>
         </div>
-        
+
     </div>
     <footer>
-        <p>(c) Todos los derechos reservados</p>
+        <p>  Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
