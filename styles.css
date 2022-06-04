@@ -5,6 +5,8 @@
     --color1: #E5E7EB;
     --color2: #6EE7B7;
     --color3: #D9D9D9;
+    --color4: #1D1D1F;
+    --color5: #4299E1;
 }
 
 * {
@@ -20,9 +22,86 @@ h1, h2, h3 {
 
 .app {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    column-gap: 2rem;
-    margin: 20px 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 0.5rem 0.5rem;
+    grid-template-areas: "header header header"
+    "aside content content"
+    "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    border: 1px solid red;
+}
+
+aside {
+    border: 1px solid blue;
+    grid-area: aside;
+    min-height: 500px;
+}
+
+section {
+    border: 1px solid yellow;
+    grid-area: content;
+}
+
+footer {
+    border: 1px solid green;
+    grid-area:  footer;
+    height: 50px;
+    color: #FFF;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    
+}
+
+article > h3 {
+    font-weight: 700;
+
+}
+
+nav {
+    display: flex;
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    font-size: 16px;
+    background-color: var(--color4);
+    color: #FFF;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+article span {
+    margin-left: 20px;
+}
+nav li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info ul {
+    list-style-type: none;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 .profile {
@@ -32,6 +111,7 @@ h1, h2, h3 {
     justify-content: space-around;
     align-items: center;
     gap: 50px;
+    
 }
 
 .content {
@@ -40,30 +120,14 @@ h1, h2, h3 {
     gap: 30px;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    font-size: 16px;
-    background-color: #000;
-    color: #FFF;
-    margin: 0 auto;
-    padding: 4px;
-}
-
-li {
-    display: inline-block;
-}
-
 .nav__link {
+    font-weight: bolder;
     text-decoration: none;
     color: #FFF;
     position: relative;
     text-decoration: none;
-    font-size: 16px;
-    padding: 6px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .nav__link::after {
@@ -80,13 +144,6 @@ li {
 .nav__link:hover::after {
     width: 100%;
 }
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 
 .btn {
     position: relative;
@@ -108,6 +165,7 @@ ul {
 
 .btn:hover {
     color: #FFF;
+    text-decoration: underline;
 }
 
 .btn-secondary {
@@ -115,34 +173,82 @@ ul {
     background-color: var(--color2);
 }
 
+.btn-send {
+    border-radius: 0;
+    color: #FFF;
+    font-weight: 900;
+    background-color: var(--color5);
+}
+
 .nav__link {
     border-radius: 0;
 }
 
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 15px;
-    
-}
-
-article > h3 {
-    font-weight: 700;
-
-}
-
-footer {
-    height: 50px;
-    color: #FFF;
-    background-color: black;
+.profile__contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 4px;
+}
+
+.profile__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFF;
+}
+
+.profile__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-medias {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.info {
+    padding-left: 1.5rem;
 }
 
 .skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 5px;
+}
+
+label {
+    font-weight: 600;
+    text-align: left;
+}
+
+textarea {
+    height: 100px;
+    width: 216px;
+}
+
+@media screen and (max-width: 767px) {
+    .app {
+        grid-template-areas: "header header header"
+                             "aside aside aside"
+                             "content content content"
+                            "footer footer footer";
+    }
 }
