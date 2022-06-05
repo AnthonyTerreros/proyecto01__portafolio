@@ -27,7 +27,7 @@ h1, h2, h3 {
     gap: 0.5rem 0.5rem;
     grid-template-areas: "header header header"
     "aside content content"
-    "footer footer footer";
+    "aside footer footer";
 }
 
 header {
@@ -114,13 +114,18 @@ aside img {
 }
 
 .profile {
-    background-color: var(--color2);
+    position: relative;
+    background-color: #FFF;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
     
+}
+
+.profile__info {
+    position: fixed;
 }
 
 .content {
@@ -210,7 +215,7 @@ aside img {
 
 .profile__name {
     text-align: center;
-    color: #FFF;
+    color: #000;
 }
 
 .profile__form {
@@ -284,8 +289,8 @@ textarea {
         
     }
 
-    .profile__name {
-        color: #000;
+    .profile__info {
+        position: relative;
     }
 
 }
