@@ -98,6 +98,11 @@ nav ul {
     padding: 0;
 }
 
+aside img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
 .info ul {
     list-style-type: none;
     margin-left: 20px;
@@ -110,7 +115,7 @@ nav ul {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     
 }
 
@@ -191,6 +196,14 @@ nav ul {
     gap: 4px;
 }
 
+.profile__contacts th {
+    text-align: right;
+}
+
+.profile__contacts td {
+    text-align: left;
+}
+
 .profile__name {
     display: flex;
     flex-direction: column;
@@ -226,6 +239,10 @@ nav ul {
     flex-wrap: wrap;
 }
 
+#file_media {
+    margin: 0 auto;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -251,4 +268,10 @@ textarea {
                              "content content content"
                             "footer footer footer";
     }
+
+    nav ul {
+        visibility: hidden;
+    }
+
+    
 }
