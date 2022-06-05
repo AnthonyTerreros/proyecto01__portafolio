@@ -27,7 +27,7 @@ h1, h2, h3 {
     gap: 0.5rem 0.5rem;
     grid-template-areas: "header header header"
     "aside content content"
-    "aside footer footer";
+    "footer footer footer";
 }
 
 header {
@@ -39,6 +39,9 @@ aside {
     border: 1px solid blue;
     grid-area: aside;
     min-height: 500px;
+    max-height: max-content;
+    position: relative;
+    padding: 0.5rem; 
 }
 
 section {
@@ -106,26 +109,14 @@ aside img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    display: block;
+    margin: 0 auto;
 }
+
 .info ul {
     list-style-type: none;
     margin-left: 20px;
     margin-top: 10px;
-}
-
-.profile {
-    position: relative;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    
-}
-
-.profile__info {
-    position: fixed;
 }
 
 .content {
@@ -198,6 +189,18 @@ aside img {
     border-radius: 0;
 }
 
+.profile {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
 .profile__contacts {
     display: flex;
     flex-direction: column;
@@ -214,6 +217,7 @@ aside img {
 }
 
 .profile__name {
+    display: block;
     text-align: center;
     color: #000;
 }
@@ -223,7 +227,11 @@ aside img {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+}
+
+.profile__social-media {
+    text-align: center;
 }
 
 .social-medias {
