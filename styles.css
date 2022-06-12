@@ -79,7 +79,7 @@ h1 {
 
 nav {
     display: flex;
-    height: 100px;
+    height: 150px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -131,7 +131,7 @@ aside img {
     color: #FFF;
     position: relative;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1rem;
     padding: 10px;
 }
 
@@ -265,6 +265,24 @@ form {
     gap: 5px;
 }
 
+.logo {
+    font-size: 1.2rem;
+    margin: 0 2px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 1px 1px salmon;
+}
+
+.nav__toogle {
+    color: white;
+    background-color: var(--color4);
+    border: none;
+    font-size: 1.875rem;
+    padding: 0 20px;
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: grey;
@@ -280,7 +298,7 @@ textarea {
     width: 216px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .app {
         grid-template-areas: "header header header"
                              "aside aside aside"
@@ -288,9 +306,41 @@ textarea {
                             "footer footer footer";
     }
 
-    nav ul {
-        visibility: hidden;
+    nav {
+        height: 100px;
     }
+
+    .hiddena {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .nav__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        position: fixed;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        padding: 20px 0;
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav__menu-visibility {
+        left: 0;
+    }
+
+    .nav__toogle {
+        display: block;
+    }
+    
 
     .profile {
         background-color: #FFF;
