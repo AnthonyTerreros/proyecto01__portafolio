@@ -32,11 +32,9 @@ h1, h2, h3 {
 
 header {
     grid-area: header;
-    border: 1px solid red;
 }
 
 aside {
-    border: 1px solid blue;
     grid-area: aside;
     min-height: 500px;
     max-height: max-content;
@@ -45,12 +43,10 @@ aside {
 }
 
 section {
-    border: 1px solid yellow;
     grid-area: content;
 }
 
 footer {
-    border: 1px solid green;
     grid-area:  footer;
     height: 50px;
     color: #FFF;
