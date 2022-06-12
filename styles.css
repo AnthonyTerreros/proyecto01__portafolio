@@ -48,14 +48,124 @@ section {
 
 footer {
     grid-area:  footer;
-    height: 50px;
     color: #FFF;
     background-color: black;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    padding: 55px 50px;
 }
 
+footer .footer-izquierda, footer .footer-centro,
+footer .footer-derecha {
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer .footer-izquierda {
+    width: 40%;
+}
+
+footer h3 {
+    color: #FFF;
+    font: normal 36px 'Roboto' cursive;
+    margin: 0;
+}
+
+footer h3 span {
+    color: var(--color5);
+}
+
+footer .footer-links {
+    color: #FFF;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+footer .footer-links a {
+    display: inline-block;
+    line-height: 1.0;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer .footer-nombre {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+footer .footer-centro {
+    width: 35%;
+}
+
+footer .footer-centro svg {
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+footer .footer-centro .correo {
+    font-size: 17px;
+	line-height: 38px;
+}
+
+footer .footer-centro p {
+    display: inline-block;
+	color: #ffffff;
+    font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+footer .footer-centro p span {
+    display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+footer .footer-centro p a {
+    color:  var(--color5);
+	text-decoration: none;
+}
+
+footer .footer-derecha {
+    width: 20%;
+}
+
+footer .footer-derecha .footer-nombre-acerca {
+    line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+footer .footer-derecha .footer-nombre-acerca span {
+    display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+footer .footer-icons {
+    margin-top: 25px;
+}
+
+header nav a span {
+    font-family: 'Inter', sans-serif;
+    color: var(--color5);
+}
 article {
     display: flex;
     flex-direction: column;
@@ -171,7 +281,8 @@ aside img {
 
 .btn-secondary {
     border-radius: 0;
-    background-color: var(--color2);
+    background-color: var(--color5);
+    color: #FFF;
 }
 
 .btn-send {
@@ -251,6 +362,9 @@ aside img {
 
 #file_media {
     margin: 0 auto;
+    height: 400px;
+    width: 600px;
+    
 }
 
 form {
@@ -293,6 +407,8 @@ textarea {
     height: 100px;
     width: 216px;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .app {
