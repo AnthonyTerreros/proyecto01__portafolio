@@ -138,6 +138,20 @@ footer .footer-centro p a {
 	text-decoration: none;
 }
 
+footer .footer-links a::before {
+    content: "|";
+    font-weight: 300;
+    font-size: 16px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+footer .footer-links .link-1::before {
+    content: none;
+}
+
 footer .footer-derecha {
     width: 20%;
 }
@@ -459,8 +473,32 @@ textarea {
         
     }
 
+    #file_media {
+        height: 200px;
+        width: auto;
+    }
+
     .profile__info {
         position: relative;
     }
+
+    footer {
+        font: bold 14px sans-serif;
+        flex-direction: column;
+    }
+
+    footer .footer-izquierda, footer .footer-centro,
+    footer .footer-derecha {
+        display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+    }
+
+    footer .footer-center svg {
+		margin-left: 0;
+	}
+
+
 
 }
