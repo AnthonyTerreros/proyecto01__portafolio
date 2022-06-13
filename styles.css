@@ -24,7 +24,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
-    gap: 0.5rem 0.5rem;
+    gap: 0rem 0.5rem;
     grid-template-areas: "header header header"
     "aside content content"
     "footer footer footer";
@@ -39,15 +39,19 @@ aside {
     min-height: 500px;
     max-height: max-content;
     position: relative;
-    padding: 0.5rem; 
+    padding: 0.5rem;
+    margin-top: 10px;   
+    margin-bottom: 10px;
 }
 
 section {
     grid-area: content;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 footer {
-    grid-area:  footer;
+    grid-area: footer;
     color: #FFF;
     background-color: black;
     display: flex;
@@ -193,8 +197,8 @@ article > h3 {
 
 }
 
-h1 {
-    box-shadow: 1px 1px 1px 1px var(--color3);
+.nombre-box {
+    box-shadow: 1.5px 1.5px var(--color5);
 }
 
 nav {
@@ -395,7 +399,6 @@ form {
     text-transform: uppercase;
     color: white;
     font-weight: bolder;
-    box-shadow: 1px 1px salmon;
 }
 
 .nav__toogle {
@@ -432,8 +435,10 @@ textarea {
                             "footer footer footer";
     }
 
+    
+
     nav {
-        height: 100px;
+        height: 120px;
     }
 
     .hiddena {
@@ -446,21 +451,21 @@ textarea {
     }
 
     .nav__menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        position: fixed;
+        display: none;
+        position: absolute;
         left: 0;
-        top: 50px;
+        top: 78px;
         width: 100%;
-        padding: 20px 0;
-        left: 100%;
-        transition: left 0.3s;
+    }
+
+    .nav__menu li a::after {
+        display: none;
     }
 
     .nav__menu-visibility {
-        left: 0;
+        display: flex;
+        justify-content: space-around;
+        
     }
 
     .nav__toogle {
