@@ -2,7 +2,7 @@
 
 Nombre: Terreros Gurumendi David
 
-Este proyecto representa un portafolio donde resumen mis habilidades y histaria profesional.
+Este proyecto representa un portafolio donde resume mis habilidades y histarial profesional.
 Mediante el uso de HTML y CSS.
 
 Sitio Web:
