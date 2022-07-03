@@ -1,14 +1,11 @@
-# Proyecto de DAWM
+# Proyectos de Desarrollo de Aplicaciones Web
 
 Nombre: Terreros Gurumendi David
 
-Este proyecto representa un portafolio donde resume mis habilidades y histarial profesional.
-Mediante el uso de HTML y CSS.
+## Proyecto 2
 
-Sitio Web:
-![Screenshot](assets/web1.png)
-![Screenshot](assets/web2.png)
+Dashboard con Bootstrap y Js Vanilla.
 
-Sitio Movil:
-![Screenshot](assets/movil1.png)
-![Screenshot](assets/movil2.png)
+## Proyecto 1
+
+Portafolio Personal
