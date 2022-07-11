@@ -3,7 +3,6 @@ const cargarGraficos = () => {
     .then(res => res.json())
     .then(content => {
         let arr = content.data
-        console.log(arr)
         let animes_names = arr.slice(0,5).map(anime => anime.title)
         let popularities = arr.slice(0,5).map(anime => anime.popularity)
         const data = {
@@ -131,7 +130,6 @@ const cargarGraficos = () => {
         );
         //Chart4
         let num_productores = arr.slice(0, 5).map(anime => anime.producers.length)
-        console.log(num_productores)
         const data4 = {
             labels: animes_names,
             datasets: [{
