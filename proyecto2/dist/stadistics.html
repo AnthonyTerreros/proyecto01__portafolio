@@ -32,14 +32,7 @@
   <meta property="twitter:image:width" content="1920">
   <meta property="twitter:image:height" content="960">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-130795909-1');
-  </script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body>
@@ -186,8 +179,8 @@
     <div class="card mb-6">
       <header class="card-header">
         <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-finance"></i></span>
-          Rating de Animes
+          <span class="icon"><i class="mdi mdi-chart-timeline"></i></span>
+          Popularidad de los 10 Mejores Animes
         </p>
       </header>
       <div class="card-content">
@@ -202,6 +195,78 @@
               </div>
             </div>
             <canvas id="mychart1" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-6">
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-chart-donut"></i></span>
+          Número de Episodios de los 7 Mejores Animes
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="chart-area">
+          <div class="h-full">
+            <div class="chartjs-size-monitor">
+              <div class="chartjs-size-monitor-expand">
+                <div></div>
+              </div>
+              <div class="chartjs-size-monitor-shrink">
+                <div></div>
+              </div>
+            </div>
+            <canvas id="mychart2" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-6">
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-finance"></i></span>
+          Número de Espectadores Por Anime del Top 7
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="chart-area">
+          <div class="h-full">
+            <div class="chartjs-size-monitor">
+              <div class="chartjs-size-monitor-expand">
+                <div></div>
+              </div>
+              <div class="chartjs-size-monitor-shrink">
+                <div></div>
+              </div>
+            </div>
+            <canvas id="mychart3" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-6">
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-chart-arc"></i></span>
+          Número de Productores de Cada Anime del Top 5
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="chart-area">
+          <div class="h-full">
+            <div class="chartjs-size-monitor">
+              <div class="chartjs-size-monitor-expand">
+                <div></div>
+              </div>
+              <div class="chartjs-size-monitor-shrink">
+                <div></div>
+              </div>
+            </div>
+            <canvas id="mychart4" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
           </div>
         </div>
       </div>
