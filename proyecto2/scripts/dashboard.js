@@ -1,5 +1,5 @@
 const cargarDatos = () => {
-  fetch("https://api.jikan.moe/v4/top/anime")
+  fetch("http://localhost:5500/api/top_anime.json")
     .then((res) => res.json())
     .then((content) => {
       let arr = content.data;
@@ -49,7 +49,29 @@ const cargarDatos = () => {
       );
       let container_table = document.querySelector("#content_table")
       arr.forEach(anime => {
-        let { } = anime
+        let { images, title, score, studios, episodes, aired, genres, rank } = anime
+        let template = `
+        <tr>
+            <td data-label="Name">${rank}</td>
+            <td class="image-cell">
+              <img src="${images.jpg.small_image_url}" alt="${title}" class="h-1.5 w-1.5">
+            </td>
+            <td data-label="Name">${title}</td>
+            <td data-label="Company">${studios[0].name}</td>
+            <td data-label="City">${genres[0].name}</td>
+            <td data-label="Progress" class="progress-cell">
+              ${score}
+            </td>
+            
+            <td class="actions-cell">
+              ${episodes}
+            </td>
+            <td data-label="Created">
+              <small class="text-gray-500">${aired.from.split("T")[0]}</small>
+            </td>
+          </tr>
+        `
+        container_table.innerHTML += template;
       })
     })
     .catch((error) => console.log(error));
@@ -62,24 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*
-<tr>
-            <td class="image-cell">
-              <div class="image">
-                <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="rounded-full">
-              </div>
-            </td>
-            <td data-label="Name">Rebecca Bauch</td>
-            <td data-label="Company">Daugherty-Daniel</td>
-            <td data-label="City">South Cory</td>
-            <td data-label="Progress" class="progress-cell">
-              <progress max="100" value="79">79</progress>
-            </td>
-            <td data-label="Created">
-              <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
-            </td>
-            <td class="actions-cell">
-              
-            </td>
-          </tr>
+
 
 */
