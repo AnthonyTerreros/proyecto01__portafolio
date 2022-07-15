@@ -1,3 +1,45 @@
+# Proyecto 2
+
+MyGuideAnime Dashboard
+
+Nombre: Terreros Gurumendi
+
+## TECNOLOGIAS UTILIZADAS
+
+- TailwindCSS (Framework Css)
+- JS Vanilla
+
+## API 
+
+JIKAN REST API (https://docs.api.jikan.moe/#tag/anime)
+
+## PETICIONES
+Se hacen las peticiones http en el localhost puerto 5000 
+http://localhost:5500/api/top_anime.json
+
+
+## CAPTURAS
+
+![Screenshot](ss/ss1.png)
+
+![Screenshot](ss/ss2.png)
+
+![Screenshot](ss/ss3.png)
+
+![Screenshot](ss/ss4.png)
+
+![Screenshot](ss/ss5.png)
+
+![Screenshot](ss/ss6.png)
+
+![Screenshot](ss/ss7.png)
+
+![Screenshot](ss/ss8.png)
+
+![Screenshot](ss/ss9.png)
+
+## REREFENCIAS
+
 # [Admin One &mdash; Free Tailwind Admin Dashboard](https://justboil.me/tailwind-admin-templates)
 
 [![version](https://img.shields.io/github/v/release/justboil/admin-one-tailwind)](https://justboil.me/tailwind-admin-templates)  [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://justboil.me/tailwind-admin-templates)
