@@ -14,7 +14,7 @@ Nombre: Terreros Gurumendi
 JIKAN REST API (https://docs.api.jikan.moe/#tag/anime)
 
 ## PETICIONES
-Se hacen las peticiones http en el localhost puerto 5000 
+Se hacen las peticiones http en el localhost puerto **5500** 
 http://localhost:5500/api/top_anime.json
 
 
