@@ -1,1 +1,37 @@
-<p>registrar works!</p>
+<div class="container full">
+    <div class="my-3 text-center">
+        <i class="bi bi-cart icon-display text-center"></i>
+    </div>
+    <h1 class="text-center fw-bold fs-1">My Shop App</h1>
+    <div class="container v-align d-grid gap-4">
+        <div class="container full">
+            <form>
+                <div class="my-3 form-group d-grid gap-2">
+                    <label class="fw-semibold" for="exampleInputEmail1">Usuario</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Ingresa usuario: ">
+                </div>
+                <div class="my-3 form-group d-grid gap-2">
+                    <label class="fw-semibold" for="exampleInputPassword1">Correo</label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Ingresa un correo: ">
+                </div>
+                <div class="my-3 form-group d-grid gap-2">
+                    <label class="fw-semibold" for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa un contraseña:">
+                </div>
+                <div class="my-3 form-group d-grid gap-2">
+                    <label class="fw-semibold" for="exampleInputPassword1">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirma tu contraseña:">
+                </div>
+                <div class="form-group form-check my-3">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones.</label>
+                </div>
+                <button routerLink="/inicio" type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+            <div class="my-3 left-start">
+                <p class="left-start">Tienes cuenta? <span routerLink="/iniciarsesion" class="blue-500">Iniciar sesión aqui</span></p>
+            </div>
+        </div>
+    </div>
+</div>

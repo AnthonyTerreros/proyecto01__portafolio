@@ -5,6 +5,10 @@ import { PrincipalComponent } from './principal/principal.component';
 import { HomeComponent } from './home/home.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { InfoproductoComponent } from './infoproducto/infoproducto.component';
+import { BuscarComponent } from './buscar/buscar.component';
+import { IngresarComponent } from './ingresar/ingresar.component';
+import { RegistrarComponent } from './registrar/registrar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -12,6 +16,10 @@ const routes: Routes = [
   { path: "inicio", component: HomeComponent },
   { path: "micompras", component: CarritoComponent },
   { path: "infoproducto", component: InfoproductoComponent },
+  { path: "buscar", component: BuscarComponent },
+  { path: "iniciarsesion", component: IngresarComponent },
+  { path: "registrar", component: RegistrarComponent },
+  { path: "perfil", component: ProfileComponent },
   { path: "**", redirectTo: "principal" }
 ];
 
