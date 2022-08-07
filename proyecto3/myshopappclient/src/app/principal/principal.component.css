@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.icon-display {
+    font-size: 150px;
+    height: 150px ;
+    width: 150px;
+}
+
+.full {
+	min-height: 100vh;
+}
+
+.titulo {
+	font-family: 'Roboto', sans-serif;
+}
+
+.v-align {
+	padding: 30vh 0;
+}
+
+.texto-grande {
+    font-size: 3rem;
+}
