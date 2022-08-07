@@ -1,0 +1,13 @@
+<div class="container px-3 py-3 d-flex flex-column justify-content-between align-items-center my-2">
+    <div class="container-fluid">
+        <p class="position-relative">
+            <i class="bi bi-heart icon-display"></i>
+        </p>
+    </div>
+    <img src="{{content.url_image}}" alt="{{content.name}}">
+    <h4 class="card-title">{{content.name.substring(0,20)}}</h4>
+    <p class="card-text fw-bold blue-500">$ {{  content.price }}</p>
+    <button class="btn btn-outline-primary btn-rounded waves-effect">
+        Agregar
+    </button>
+</div>

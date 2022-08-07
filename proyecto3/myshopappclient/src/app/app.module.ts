@@ -8,10 +8,17 @@ import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { HomeComponent } from './home/home.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatIconModule} from '@angular/material/icon';
-import { HomeComponent } from './home/home.component';
+import { CardComponent } from './card/card.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { InfoproductoComponent } from './infoproducto/infoproducto.component';
+import { BuscarComponent } from './buscar/buscar.component';
+import { IngresarComponent } from './ingresar/ingresar.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,13 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     PrincipalComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponent,
+    CarritoComponent,
+    InfoproductoComponent,
+    BuscarComponent,
+    IngresarComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +44,8 @@ import { HomeComponent } from './home/home.component';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
