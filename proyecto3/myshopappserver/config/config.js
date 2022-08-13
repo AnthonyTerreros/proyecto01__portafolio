@@ -1,25 +1,28 @@
 require("dotenv").config();
 
 module.exports = {
-  "development": {
+  development: {
     username: process.env.USER_DB,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
     host: process.env.HOST,
     dialect: "postgres",
   },
-  "test": {
+  test: {
     username: process.env.USER_DB,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
     host: process.env.HOST,
     dialect: "postgres",
   },
-  "production": {
+  production: {
     username: process.env.USER_DB,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
     host: process.env.HOST,
     dialect: "postgres",
+  },
+  define: {
+    freezeTableName: true,
   },
 };

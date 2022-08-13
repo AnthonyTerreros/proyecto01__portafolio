@@ -10,10 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      detalleorden.belongsTo(models.orden)
-      models.orden.hasMany(detalleorden)
-      detalleorden.belongsTo(models.producto)
-      models.producto.hasMany(detalleorden)
+      detalleorden.belongsTo(models.orden, {
+        foreignKey: {
+          name: 'ordenId'
+        }
+      })
+      models.orden.hasMany(detalleorden, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
+      detalleorden.belongsTo(models.producto, {
+        foreignKey: {
+          name: 'productoId'
+        }
+      })
+      models.producto.hasMany(detalleorden, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   detalleorden.init({

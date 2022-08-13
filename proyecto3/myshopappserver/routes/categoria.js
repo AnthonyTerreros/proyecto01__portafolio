@@ -17,3 +17,5 @@ router.post("/categorias", crearCategoria)
 router.put("/categorias/:id", actualizarCategoria)
 
 router.delete("/categorias/:id", eliminarCategoria)
+
+module.exports = router

@@ -8,7 +8,7 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productoRouter = require('./routes/producto')
-var categoriaRouter = require('./routes/producto')
+var categoriaRouter = require('./routes/categoria')
 var app = express();
 
 // view engine setup

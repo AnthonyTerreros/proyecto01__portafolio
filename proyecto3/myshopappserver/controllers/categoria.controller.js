@@ -3,11 +3,13 @@ const Categoria = require("../models").categoria;
 
 const obtenerCategorias = (req, res, next) => {
     Categoria.findAll()
-    .then((res) => {
-      res.status(200).json(res);
+    .then((categorias) => {
+      res.json(categorias);
     })
     .catch((err) => {
-      res.status(404).json({ message: "No hay productos registrados!" });
+      // res.send(404).json({ message: "No hay categorias registrados!" });
+      res.json({"message": "No se encontraron datos. :("})
+      console.log(err)
     });
 };
 
@@ -16,7 +18,7 @@ const obtenerCategoriaPorId = (req, res, next) => {
     .then((photos) => {
       res.json(photos);
     })
-    .catch((error) => res.status(400).send(error));
+    .catch((error) => res.send(400).send(error));
 };
 
 const crearCategoria = (req, res, next) => {

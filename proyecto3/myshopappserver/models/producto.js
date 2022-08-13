@@ -10,8 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      producto.belongsTo(models.categoria)
-      models.categoria.hasOne(producto)
+      producto.belongsTo(models.categoria, {
+        foreignKey: {
+          name: 'categoriaId'
+        }
+      })
+      models.categoria.hasOne(producto, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   producto.init({

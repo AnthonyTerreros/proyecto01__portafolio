@@ -2,24 +2,24 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addConstraint('ordens', {
+    queryInterface.addConstraint('orden', {
       fields: ['usuarioID'],
       type: 'foreign key',
       name: 'usuario-orden-relacion',
       references: {
-        table: 'usuarios',
+        table: 'usuario',
         field: 'id'
       }
     })
   },
 
   async down (queryInterface, Sequelize) {
-    queryInterface.removeConstraint('ordens', {
+    queryInterface.removeConstraint('orden', {
       fields: ['usuarioID'],
       type: 'usuario-orden-relacion',
       name: 'usuario_orden',
       references: {
-        table: 'usuarios',
+        table: 'usuario',
         field: 'id'
       }
     })
