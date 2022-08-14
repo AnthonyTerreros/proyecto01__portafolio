@@ -38,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'detalleorden',
+    freezeTableName: true
   });
   return detalleorden;
 };
