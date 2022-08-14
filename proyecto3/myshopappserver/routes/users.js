@@ -1,7 +1,8 @@
 var express = require('express');
-const crearUsuario = require('../controllers/usuario.controller');
+const getUsuarios = require('../controllers/usuario.controller');
+const verifyToken = require('../middlewares/validate-token');
 var router = express.Router();
 
-router.post('/registrarse', crearUsuario)
+router.get('/usuarios' ,getUsuarios)
 
 module.exports = router;

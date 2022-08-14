@@ -6,16 +6,17 @@ const {
     actualizarCategoria,
     eliminarCategoria
 } = require('../controllers/categoria.controller')
+const verifyToken = require('../middlewares/validate-token')
 const router = express.Router()
 
 router.get("/categorias", obtenerCategorias)
 
-router.get("/categorias/:id", obtenerCategoriaPorId)
+router.get("/categorias/:id",obtenerCategoriaPorId)
 
-router.post("/categorias", crearCategoria)
+router.post("/categorias", verifyToken ,crearCategoria)
 
-router.put("/categorias/:id", actualizarCategoria)
+router.put("/categorias/:id", verifyToken,actualizarCategoria)
 
-router.delete("/categorias/:id", eliminarCategoria)
+router.delete("/categorias/:id", verifyToken ,eliminarCategoria)
 
 module.exports = router

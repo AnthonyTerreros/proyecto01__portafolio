@@ -2,16 +2,13 @@ const bcrypt = require('bcryptjs')
 
 const Usuario = require("../models").usuario;
 
-const crearUsuario = async (req, res) => {
-    let {username, nombre, correo, password, direccion} = req.body
-    let password_encrypted = await bcrypt.hash(password, 8)
+const getUsuarios = async (req, res) => {
     try {
-        let user = await Usuario.create({username, nombre, correo, password: password_encrypted, direccion, createdAt: new Date(), updatedAt: new Date()})
-        res.json({message: "Usuario Creado!", user})
+        let usuarios = await Usuario.findAll()
+        res.json(usuarios)
     } catch (error) {
-        console.log(error)
-        res.status(500).json({message: "Ocurrio un Error, no se pudo crear usuario!"})
+        res.status(500).json({message: "Error no se pudo consultar los usuarios!"})
     }
-}
+}  
 
-module.exports = crearUsuario
+module.exports = getUsuarios
