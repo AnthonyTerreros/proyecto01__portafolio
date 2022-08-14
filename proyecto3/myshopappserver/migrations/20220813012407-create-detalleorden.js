@@ -9,7 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ordenId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'orden',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       },
       productoId: {
         type: Sequelize.INTEGER

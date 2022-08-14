@@ -2,14 +2,12 @@ const { Sequelize, Op } = require("sequelize");
 const Producto = require("../models").producto;
 
 const obtenerProductos = (req, res, next) => {
-  Producto.findAll({
-    attributes: ["nombre", "stock", "url_imagen", "precio", "categoriaId"],
-  })
+  Producto.findAll({attributes: {exclude: ['categoriumId']}})
     .then((productos) => {
       res.json(productos);
     })
     .catch((err) => {
-      res.json({ "message": "No hay productos registrados!"});
+      res.status(500).json({ "message": "No hay productos registrados!"});
       console.log(err);
     });
 };

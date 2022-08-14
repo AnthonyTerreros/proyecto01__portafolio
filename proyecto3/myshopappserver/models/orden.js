@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       })
       models.usuario.hasOne(models.orden, {
-        onDelete: 'CASCADE',
+        onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
       })
     }

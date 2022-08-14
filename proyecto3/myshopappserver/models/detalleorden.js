@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       })
       models.orden.hasMany(detalleorden, {
-        onDelete: 'CASCADE',
+        onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
       })
       detalleorden.belongsTo(models.producto, {
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       })
       models.producto.hasMany(detalleorden, {
-        onDelete: 'CASCADE',
+        onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
       })
     }

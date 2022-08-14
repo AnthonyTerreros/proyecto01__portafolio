@@ -4,11 +4,6 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class producto extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       producto.belongsTo(models.categoria, {
         foreignKey: {
@@ -16,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       })
       models.categoria.hasOne(producto, {
-        onDelete: 'CASCADE',
+        onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
       })
     }
@@ -30,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'producto',
+    freezeTableName: true
   });
   return producto;
 };
