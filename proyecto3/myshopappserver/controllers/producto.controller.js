@@ -1,19 +1,26 @@
 const { Sequelize, Op } = require("sequelize");
 const Producto = require("../models").producto;
+const Categoria = require("../models").categoria;
 
 const obtenerProductos = (req, res, next) => {
-  Producto.findAll({attributes: {exclude: ['categoriumId']}})
+  Producto.findAll({
+    include: { model: Categoria, required: true },
+    attributes: { exclude: ["categoriumId", "createdAt", "updatedAt"] }
+  })
     .then((productos) => {
       res.json(productos);
     })
     .catch((err) => {
-      res.status(500).json({ "message": "No hay productos registrados!"});
+      res.status(500).json({ message: "No hay productos registrados!" });
       console.log(err);
     });
 };
 
 const obtenerProductoPorId = (req, res, next) => {
-  Producto.findOne({attributes: {exclude: ['categoriumId']}, where: { id: req.params.id } })
+  Producto.findOne({
+    attributes: { exclude: ["categoriumId"] },
+    where: { id: req.params.id },
+  })
     .then((photos) => {
       res.json(photos);
     })
@@ -21,18 +28,20 @@ const obtenerProductoPorId = (req, res, next) => {
 };
 
 const crearProducto = async (req, res, next) => {
-  const { name, stock, url_imagen, precio, categoriaId} = req.body;
+  const { name, stock, url_imagen, precio, categoriaId } = req.body;
   try {
-    await Producto.create({
-      name,
-      stock,
-      url_imagen,
-      precio,
-      categoriaId
-    },
-    {
-      fields: ["name", "stock", "url_imagen", "precio", "categoriaId"],
-    });
+    await Producto.create(
+      {
+        name,
+        stock,
+        url_imagen,
+        precio,
+        categoriaId,
+      },
+      {
+        fields: ["name", "stock", "url_imagen", "precio", "categoriaId"],
+      }
+    );
     res.json({ message: "Producto Creado!" });
   } catch (error) {
     res.status(500).json({ message: "No se pudo crear el producto!" });
@@ -42,7 +51,7 @@ const crearProducto = async (req, res, next) => {
 const actualizarProducto = async (req, res, next) => {
   try {
     let id_pk = req.params.id;
-    const { name, stock, url_imagen, precio, categoriaId} = req.body;
+    const { name, stock, url_imagen, precio, categoriaId } = req.body;
     let producto = await Producto.findByPk(id_pk);
     producto.name = name;
     producto.stock = stock;
@@ -52,8 +61,12 @@ const actualizarProducto = async (req, res, next) => {
     await producto.save();
     res.json({ message: "Producto Actualizado!" });
   } catch (error) {
-    console.log(error)  
-    res.status(500).json({ message: "No se pudo actualizar el producto. Intenta mas tarde!" });
+    console.log(error);
+    res
+      .status(500)
+      .json({
+        message: "No se pudo actualizar el producto. Intenta mas tarde!",
+      });
   }
 };
 
@@ -66,10 +79,8 @@ const eliminarProducto = async (req, res, next) => {
     });
     res.json({ message: "Producto Eliminada!" });
   } catch (error) {
-    console.log(error)
-    res
-      .status(500)
-      .json({ message: "El Producto no pudo ser eliminada!" });
+    console.log(error);
+    res.status(500).json({ message: "El Producto no pudo ser eliminada!" });
   }
 };
 

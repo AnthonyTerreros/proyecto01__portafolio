@@ -2,7 +2,7 @@
     <app-header></app-header>
     <div class="container-fluid full overflow-auto h-auto">
         <div class="row row-cols-2">
-            <app-card routerLink="/infoproducto" [content]="product" *ngFor="let product of products"></app-card>
+            <app-card [routerLink]="['/inicio', product.id]" [content]="product" *ngFor="let product of productos"></app-card>
         </div>
     </div>
     <app-footer ></app-footer>

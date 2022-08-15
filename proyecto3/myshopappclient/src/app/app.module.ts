@@ -9,10 +9,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { CardComponent } from './card/card.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { InfoproductoComponent } from './infoproducto/infoproducto.component';
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     BuscarComponent,
     IngresarComponent,
     RegistrarComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,13 +44,13 @@ import { ProfileComponent } from './profile/profile.component';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     BrowserAnimationsModule,
     MatIconModule,
-    
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

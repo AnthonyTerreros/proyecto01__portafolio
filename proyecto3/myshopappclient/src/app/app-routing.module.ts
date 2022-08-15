@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "principal", component: PrincipalComponent },
   { path: "inicio", component: HomeComponent },
   { path: "micompras", component: CarritoComponent },
-  { path: "infoproducto", component: InfoproductoComponent },
+  { path: "inicio/:id", component: InfoproductoComponent },
   { path: "buscar", component: BuscarComponent },
   { path: "iniciarsesion", component: IngresarComponent },
   { path: "registrar", component: RegistrarComponent },

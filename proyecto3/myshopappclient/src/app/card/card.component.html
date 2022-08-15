@@ -4,9 +4,10 @@
             <i class="bi bi-heart icon-display"></i>
         </p>
     </div>
-    <img src="{{content.url_image}}" alt="{{content.name}}">
-    <h4 class="card-title">{{content.name.substring(0,20)}}</h4>
-    <p class="card-text fw-bold blue-500">$ {{  content.price }}</p>
+    <img src="{{content.url_image}}" alt="{{content.nombre}}">
+    <h4 class="card-title">{{content.nombre.substring(0,20)}}</h4>
+    <p class="card-text fw-bold blue-500">$ {{ content.precio }}</p>
+    <p class="btn btn-primary">{{content.categoriaId}}</p>
     <button class="btn btn-outline-primary btn-rounded waves-effect">
         Agregar
     </button>
