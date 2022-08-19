@@ -9,6 +9,14 @@ const Usuario = require("../models").usuario;
 
 loginRouter.post("/register", async (req, res) => {
   let { username, nombre, correo, password, direccion } = req.body;
+  let role = ""
+  console.log(correo)
+  if(correo.includes("admin")) {
+    role = "admin"
+  }else {
+    role = "user"
+  }
+  
   let password_encrypted = await bcrypt.hash(password, 8);
   try {
     let usuario = await Usuario.findOne({ where: { correo: correo } });
@@ -20,11 +28,12 @@ loginRouter.post("/register", async (req, res) => {
       nombre,
       correo,
       password: password_encrypted,
+      rol: role,
       direccion,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
-    res.json({ message: "Usuario Creado!", user });
+    res.json({ message: "Usuario Creado!"});
   } catch (error) {
     console.log(error);
     res
@@ -47,10 +56,10 @@ loginRouter.post("/login", async (req, res) => {
           user: usuario,
           expiresIn: "1d",
         },
-        process.env.JWT_TOKEN_SECRET_KEY
+        process.env.JWT_TOKEN_SECRET_KEY  
       );
       return res
-        .header("auth-token", token)
+        .header("authorization", token)
         .json({ message: "Ingreso Correcto!", token });
     }
     return res.json({ message: "Correo o Constrasena Incorrecta!" });

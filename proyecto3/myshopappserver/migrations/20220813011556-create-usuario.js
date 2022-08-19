@@ -20,6 +20,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      rol: {
+        type: Sequelize.STRING
+      },
       direccion: {
         type: Sequelize.STRING
       },
