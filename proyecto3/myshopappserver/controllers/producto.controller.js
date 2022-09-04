@@ -5,7 +5,7 @@ const Categoria = require("../models").categoria;
 const obtenerProductos = (req, res, next) => {
   Producto.findAll({
     include: { model: Categoria, required: true },
-    attributes: { exclude: ["categoriumId", "createdAt", "updatedAt"] }
+    attributes: { exclude: ["categoriumId", "createdAt", "updatedAt", "categoriaId"] }
   })
     .then((productos) => {
       res.json(productos);

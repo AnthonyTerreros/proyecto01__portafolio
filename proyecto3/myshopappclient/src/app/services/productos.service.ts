@@ -22,7 +22,7 @@ export class ProductosService {
   getProductoPorCategoriaFirebase(valor: string) {
     return this.httpclient.get(`${this.URL_FIREBASE}`)
     .pipe(
-      map((productos: any) => productos.filter((product: any) => product.categoria === valor, toArray()))
+      map((productos: any) => productos.filter((product: any) => product.categorium.name === valor, toArray()))
     );
   }
 }

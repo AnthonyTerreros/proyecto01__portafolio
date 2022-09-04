@@ -10,7 +10,13 @@ import { ProductosService } from '../services/productos.service';
 })
 export class InfoproductoComponent implements OnInit {
   producto: Producto = {
-    categoriaId: -1,
+    categorium: {
+      id: -1,
+      name: "",
+      descripcion: "",
+      createdAt: "",
+      updatedAt: ""
+    },
     id: -1,
     nombre: '',
     precio: 0,

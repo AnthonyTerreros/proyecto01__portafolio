@@ -16,7 +16,20 @@
             <div class="my-3 container-fluid full overflow-auto h-auto">
                 <div class="row row-cols-2">
                     <app-card *ngFor="let product of productos" [content]="product" [routerLink]="['/inicio', product.id]">
-
+                        <div class="container px-3 py-3 d-flex flex-column justify-content-between align-items-center my-2">
+                            <div class="container-fluid">
+                                <p class="position-relative">
+                                    <i class="bi bi-heart icon-display"></i>
+                                </p>
+                            </div>
+                            <img src="{{product.url_image}}" alt="{{product.nombre}}">
+                            <h4 class="card-title">{{product.nombre.substring(0,20)}}</h4>
+                            <p class="card-text fw-bold blue-500">$ {{product.precio }}</p>
+                            <p class="btn btn-primary">{{product.categorium.name}}</p>
+                            <button class="btn btn-outline-primary btn-rounded waves-effect">
+                                Agregar
+                            </button>
+                        </div>
                     </app-card>
                 </div>
             </div>

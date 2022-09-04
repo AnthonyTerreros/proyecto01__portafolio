@@ -10,7 +10,13 @@ import { Producto } from '../interfaz/producto';
 })
 export class CardComponent implements OnInit {
   @Input('content') content: Producto = {
-    categoriaId: -1,
+    categorium: {
+      id: -1,
+      name: "",
+      descripcion: "",
+      createdAt: "",
+      updatedAt: ""
+    },
     id: -1,
     nombre: "",
     precio: 0,

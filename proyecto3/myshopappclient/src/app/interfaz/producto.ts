@@ -1,5 +1,7 @@
+import { Categoria } from "./categoria";
+
 export interface Producto {
-    categoriaId: number;
+    categorium: Categoria;
     id: number;
     nombre: string;
     precio: number;
