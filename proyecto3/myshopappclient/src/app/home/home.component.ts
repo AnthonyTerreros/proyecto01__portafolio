@@ -10,7 +10,7 @@ import { ProductosService } from '../services/productos.service';
 })
 export class HomeComponent implements OnInit {
 
-  title_info: string = "";
+  title_info: string = "Home";
 
   productos: any = [];
 

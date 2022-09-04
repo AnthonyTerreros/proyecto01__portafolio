@@ -3,6 +3,9 @@
     <i class="bi bi-cart icon-display text-center"></i>
   </div>
   <h1 class="text-center fw-bold fs-1">My Shop App</h1>
+  <div *ngIf="message" class="my-2 alert alert-danger" role="alert">
+    {{message}}
+  </div>
   <div class="container v-align d-grid gap-4">
     <div class="container full">
       <form [formGroup]="form">

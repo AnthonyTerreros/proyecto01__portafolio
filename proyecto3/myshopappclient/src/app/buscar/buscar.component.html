@@ -1,11 +1,13 @@
 <div class="container full">
-    <app-header></app-header>
+    <app-header [title]="title"></app-header>
     <div class="container-fluid">
         <div class="container">
             <div class="d-flex align-items-center">
                 <div class="input-group d-flex align-items-center">
                     <div class="form-outline">
-                      <input id="search-focus" type="search" id="form1" class="form-control" placeholder="Buscar un producto..." />
+                      <select name="" id="" *ngFor="let category of categorias">
+                        <option value="">
+                      </select>
                     </div>
                     <button type="button left-end" class="btn btn-primary">
                         <i class="bi bi-search"></i>

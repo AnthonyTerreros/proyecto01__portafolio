@@ -41,7 +41,7 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="acceptTerms()">
                     <label class="form-check-label" for="exampleCheck1" >Acepto los terminos y condiciones.</label>
                 </div>
-                <button *ngIf="estado" type="submit" class="btn btn-primary" (click)="handleRegister(form.value)">Registrarse</button>
+                <button *ngIf="estado" class="btn btn-primary" (click)="handleRegister(form.value)">Registrarse</button>
             </form>
             <div class="my-3 left-start">
                 <p class="left-start">Tienes cuenta? <span routerLink="/iniciarsesion" class="blue-500">Iniciar sesión

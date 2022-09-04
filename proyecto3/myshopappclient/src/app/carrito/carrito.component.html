@@ -1,5 +1,5 @@
 <div class="container-fluid full">
-    <app-header></app-header>
+    <app-header [title]="title"></app-header>
     <div class="container-fuild">
         <h2 class="text-center">Carrito de Compras</h2>
         <div class="container-fluid d-flex flex-column justify-content-around align-items-center">
@@ -37,11 +37,6 @@
                 $ 0
             </p>
             </div>
-        </div>
-        <div class="col-md-12 text-center">
-            <button class="my-4 btn btn-primary mx-auto my-0">
-                Pagar
-            </button>
         </div>
     </div>
     <app-footer></app-footer>

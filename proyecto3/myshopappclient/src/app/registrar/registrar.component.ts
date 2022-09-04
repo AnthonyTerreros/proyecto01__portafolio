@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-registrar',
@@ -12,7 +14,7 @@ export class RegistrarComponent implements OnInit {
   estado: Boolean = false
 
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { 
     this.form = this.fb.group({
       name: new FormControl(''),
       email: new FormControl(''),
@@ -30,6 +32,11 @@ export class RegistrarComponent implements OnInit {
 
   handleRegister(data: FormGroup) {
     console.log(data)
+    this.auth.register(data).subscribe((res: any) => {
+      this.router.navigate(["iniciarsesion"])
+    }, error => {
+      window.alert("Ocurrio Un Error!")
+    })
   }
 
 }
