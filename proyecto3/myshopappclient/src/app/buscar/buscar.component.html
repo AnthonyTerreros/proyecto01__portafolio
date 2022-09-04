@@ -3,21 +3,21 @@
     <div class="container-fluid">
         <div class="container">
             <div class="d-flex align-items-center">
-                <div class="input-group d-flex align-items-center">
-                    <div class="form-outline">
-                      <select name="" id="" *ngFor="let category of categorias">
-                        <option value="">
-                      </select>
-                    </div>
-                    <button type="button left-end" class="btn btn-primary">
-                        <i class="bi bi-search"></i>
-                    </button>
+                <div class="input-group d-flex justify-content-center align-items-center ">
+                    <select name="myselect" class="form-select" (change)="changeSelect($event)">
+                        <option value="normal" selected>Selecciona Una Opcion</option>
+                        <option *ngFor="let category of categorias" value="{{category.name}}"> 
+                            {{category.name}} 
+                        </option>
+                    </select>
                 </div>
             </div>
-            <h3 class="my-3">Resultados (0)</h3>
+            <h3 class="my-3">Resultados ({{productos.length}})</h3>
             <div class="my-3 container-fluid full overflow-auto h-auto">
                 <div class="row row-cols-2">
-                    Nothing...
+                    <app-card *ngFor="let product of productos" [content]="product" [routerLink]="['/inicio', product.id]">
+
+                    </app-card>
                 </div>
             </div>
         </div>

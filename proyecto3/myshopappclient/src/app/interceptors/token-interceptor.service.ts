@@ -12,12 +12,14 @@ export class TokenInterceptorService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: any = localStorage.getItem('token');
-    if (token) {
-       req = req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+    if(req.url !== "https://myshopapp-tg-default-rtdb.firebaseio.com/productos.json") {
+      if (token) {
+        req = req.clone({
+         setHeaders: {
+           Authorization: `Bearer ${token}`,
+         },
+       });
+     }
     }
     return next.handle(req).pipe(
       catchError((err) => {

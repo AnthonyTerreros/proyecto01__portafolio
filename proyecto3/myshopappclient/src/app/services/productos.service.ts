@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map, toArray } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductosService {
-  auth_token: any = localStorage.getItem('token');
+
+  URL_FIREBASE = "https://myshopapp-tg-default-rtdb.firebaseio.com/productos.json";
 
   constructor(private httpclient: HttpClient) {}
 
   getProductos() {
-    console.log(this.auth_token);
-    // const headers: any = new Headers({
-    //   'Content-Type': 'application/json',
-    //   Authorization: `Bearer ${this.auth_token}`,
-    // });
     return this.httpclient.get('http://localhost:3000/api/productos');
   }
 
   getProductoPorId(id: number) {
-    // const headers: any = new Headers({
-    //   'Content-Type': 'application/json',
-    //   Authorization: `Bearer ${this.auth_token}`,
-    // });
     return this.httpclient.get(`http://localhost:3000/api/productos/${id}`);
+  }
+
+  getProductoPorCategoriaFirebase(valor: string) {
+    return this.httpclient.get(`${this.URL_FIREBASE}`)
+    .pipe(
+      map((productos: any) => productos.filter((product: any) => product.categoria === valor, toArray()))
+    );
   }
 }
