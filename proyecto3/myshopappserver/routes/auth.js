@@ -8,28 +8,29 @@ const loginRouter = express.Router();
 const Usuario = require("../models").usuario;
 
 loginRouter.post("/register", async (req, res) => {
-  let { username, nombre, correo, password, direccion } = req.body;
+  let { name, email, password, address } = req.body;
+  console.log(email)
   let role = ""
-  console.log(correo)
-  if(correo.includes("admin")) {
+  if(email.includes("admin")) {
     role = "admin"
   }else {
     role = "user"
   }
+  let username = name.trim().toLowerCase()
   
   let password_encrypted = await bcrypt.hash(password, 8);
   try {
-    let usuario = await Usuario.findOne({ where: { correo: correo } });
-    if (usuario) {
+    let usuario = await Usuario.findOne({ where: { correo: email } });
+    if (! usuario) {
       return res.status(200).json({ message: "El usuario ya existe!" });
     }
     let user = await Usuario.create({
       username,
-      nombre,
-      correo,
+      nombre: name,
+      correo: email,
       password: password_encrypted,
       rol: role,
-      direccion,
+      direccion: address,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
@@ -43,11 +44,11 @@ loginRouter.post("/register", async (req, res) => {
 });
 
 loginRouter.post("/login", async (req, res) => {
-  let { correo, password } = req.body;
+  let { email, password } = req.body;
   try {
-    let usuario = await Usuario.findOne({ where: { correo: correo } });
-    if (!usuario) {
-      res.status(404).json({ message: "Usuario no encontrado, Registrate!" });
+    let usuario = await Usuario.findOne({ where: { correo: email } });
+    if (! usuario) {
+      return res.status(404).json({ message: "Usuario no encontrado, Registrate!" });
     }
     let verificar_password = await bcrypt.compare(password, usuario.password);
     if (verificar_password) {
@@ -60,12 +61,11 @@ loginRouter.post("/login", async (req, res) => {
       );
       return res
         .header("authorization", token)
-        .json({ message: "Ingreso Correcto!", token });
+        .json({ message: "Ingreso Correcto!", token, role: usuario.rol, userid: usuario.id });
     }
-    return res.json({ message: "Correo o Constrasena Incorrecta!" });
+    return res.status(400).json({ message: "Correo o Constrasena Incorrecta!" });
   } catch (error) {
-    console.log(error);
-    res
+    return res
       .status(500)
       .json({ message: "No se pudo iniciar session, intenta mas tarde!" });
   }

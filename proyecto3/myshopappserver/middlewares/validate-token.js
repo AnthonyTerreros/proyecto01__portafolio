@@ -4,8 +4,8 @@ const { Sequelize, Op } = require("sequelize");
 const Usuario = require("../models").usuario;
 
 const verifyToken = (req, res, next) => {
-    const header = req.headers['authorization']
-    if(!header ) return res.status(401).json({message: "Acceso Denegado, Identificate!"})
+    const header = req.headers.authorization
+    if(! header ) return res.status(401).json({message: "Acceso Denegado, Identificate!"})
     try {
         let token = header.split(" ")[1]
         let verificar_Token_existe = jwt.verify(token, process.env.JWT_TOKEN_SECRET_KEY)
