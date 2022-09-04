@@ -5,32 +5,47 @@
     <h1 class="text-center fw-bold fs-1">My Shop App</h1>
     <div class="container v-align d-grid gap-4">
         <div class="container full">
-            <form>
+            <form [formGroup]="form">
                 <div class="my-3 form-group d-grid gap-2">
-                    <label class="fw-semibold" for="exampleInputEmail1">Usuario</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Ingresa usuario: ">
+                    <label class="fw-semibold" for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                    placeholder="Ingresa Nombre "
+                    formControlName="name"
+                    ngDefaultControl
+                    >
                 </div>
                 <div class="my-3 form-group d-grid gap-2">
-                    <label class="fw-semibold" for="exampleInputPassword1">Correo</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Ingresa un correo: ">
+                    <label class="fw-semibold" for="email">Correo</label>
+                    <input type="email" class="form-control" id="email"
+                        placeholder="Ingresa un correo"
+                        formControlName="email"
+                    ngDefaultControl>
                 </div>
                 <div class="my-3 form-group d-grid gap-2">
-                    <label class="fw-semibold" for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa un contraseña:">
+                    <label class="fw-semibold" for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password"
+                        placeholder="Ingresa un contraseña"
+                        formControlName="password"
+                    ngDefaultControl>
                 </div>
                 <div class="my-3 form-group d-grid gap-2">
-                    <label class="fw-semibold" for="exampleInputPassword1">Confirmar Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirma tu contraseña:">
+                    <label class="fw-semibold" for="address">Direccion</label>
+                    <input type="text" class="form-control" id="address"
+                        placeholder="Ingresa direccion "
+                        formControlName="address"
+                    ngDefaultControl
+                        >
+                        
                 </div>
                 <div class="form-group form-check my-3">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones.</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="acceptTerms()">
+                    <label class="form-check-label" for="exampleCheck1" >Acepto los terminos y condiciones.</label>
                 </div>
-                <button routerLink="/inicio" type="submit" class="btn btn-primary">Registrarse</button>
+                <button *ngIf="estado" type="submit" class="btn btn-primary" (click)="handleRegister(form.value)">Registrarse</button>
             </form>
             <div class="my-3 left-start">
-                <p class="left-start">Tienes cuenta? <span routerLink="/iniciarsesion" class="blue-500">Iniciar sesión aqui</span></p>
+                <p class="left-start">Tienes cuenta? <span routerLink="/iniciarsesion" class="blue-500">Iniciar sesión
+                        aqui</span></p>
             </div>
         </div>
     </div>

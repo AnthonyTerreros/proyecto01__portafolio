@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registrar',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  estado: Boolean = false
+
+
+  constructor(private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      name: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+      address: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  acceptTerms() {
+    this.estado = !this.estado;
+  }
+
+  handleRegister(data: FormGroup) {
+    console.log(data)
   }
 
 }

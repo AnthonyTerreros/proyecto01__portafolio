@@ -1,24 +1,27 @@
 <div class="container full">
-    <div class="my-3 text-center">
-      <i class="bi bi-cart icon-display text-center"></i>
-    </div>
-    <h1 class="text-center fw-bold fs-1">My Shop App</h1>
-    <div class="container v-align d-grid gap-4">
-        <div class="container full">
-            <form>
-                <div class="my-3 form-group">
-                  <label for="exampleInputEmail1">Correo</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="my-3 form-group">
-                  <label for="exampleInputPassword1">Contraseña</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button routerLink="/inicio" type="submit" class="btn btn-primary">Iniciar Session</button>
-              </form>
-              <div class="my-3 left-start">
-                <p class="left-start">No tienes cuenta? <span routerLink="/registrar" class="blue-500">Registrate aqui</span></p>    
-            </div> 
+  <div class="py-5 text-center">
+    <i class="bi bi-cart icon-display text-center"></i>
+  </div>
+  <h1 class="text-center fw-bold fs-1">My Shop App</h1>
+  <div class="container v-align d-grid gap-4">
+    <div class="container full">
+      <form [formGroup]="form">
+        <div class="py-3 form-group">
+          <label class="py-2" for="email">Correo</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+            placeholder="Ingresa Correo " formControlName="email" ngDefaultControl>
         </div>
+        <div class="py-1 form-group">
+          <label class="py-2" for="password">Contraseña</label>
+          <input type="password" class="form-control" id="password" placeholder="Ingresa tu Password"
+          formControlName="password" ngDefaultControl>
+        </div>
+        <button type="submit" class="my-3 btn btn-primary" (click)="handleForm(form.value)">Iniciar Session</button>
+      </form>
+      <div class="my-2 left-start">
+        <p class="left-start">No tienes cuenta? <span routerLink="/registrar" class="blue-500">Registrate aqui</span>
+        </p>
+      </div>
     </div>
+  </div>
 </div>

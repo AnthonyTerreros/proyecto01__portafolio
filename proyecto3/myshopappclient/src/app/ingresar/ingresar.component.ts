@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ingresar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngresarComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      email: new FormControl(''),
+      password: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  handleForm(data: FormGroup) {
+    console.log(data)
   }
 
 }

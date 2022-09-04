@@ -21,6 +21,8 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { ProfileComponent } from './profile/profile.component';
     }),
     BrowserAnimationsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
