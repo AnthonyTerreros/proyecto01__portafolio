@@ -38,7 +38,6 @@ export class IngresarComponent implements OnInit {
       if(error.status === 400) {
         this.message = "Email o Password Mal Ingresados!"
       }
-      // this.message = error.message
     })
 
   }

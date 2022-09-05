@@ -9,7 +9,7 @@
             <p>Unidades Disponibles: {{producto.stock}}</p>
             <p class="fw-bolder blue-500">Precio: ${{producto.precio}}</p>
             <div class="col-md-12 text-center">
-                <button class="my-4 btn btn-primary mx-auto my-0">
+                <button class="my-4 btn btn-primary mx-auto my-0" (click)="agregarAlCarro()">
                     Agregar al Carrito
                 </button>
             </div>

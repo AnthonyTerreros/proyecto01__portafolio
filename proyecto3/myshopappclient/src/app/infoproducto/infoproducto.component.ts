@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from '../interfaz/producto';
+import { CarroService } from '../services/carro.service';
 import { ProductosService } from '../services/productos.service';
 
 @Component({
@@ -26,7 +27,9 @@ export class InfoproductoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productoService: ProductosService
+    private productoService: ProductosService,
+    private carrito: CarroService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,5 +39,10 @@ export class InfoproductoComponent implements OnInit {
     this.productoService.getProductoPorId(id).subscribe((res) => {
       this.producto = res as Producto;
     });
+  }
+
+  agregarAlCarro() {
+    this.carrito.addToCart(this.producto);
+    this.router.navigate(['inicio'])
   }
 }

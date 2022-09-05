@@ -16,13 +16,13 @@ loginRouter.post("/register", async (req, res) => {
   }else {
     role = "user"
   }
-  let username = name.trim().toLowerCase()
+  let username = name.toLowerCase()
   
   let password_encrypted = await bcrypt.hash(password, 8);
   try {
     let usuario = await Usuario.findOne({ where: { correo: email } });
-    if (! usuario) {
-      return res.status(200).json({ message: "El usuario ya existe!" });
+    if (usuario) {
+      return res.status(400).json({ message: "El usuario ya existe!" });
     }
     let user = await Usuario.create({
       username,
@@ -34,6 +34,7 @@ loginRouter.post("/register", async (req, res) => {
       createdAt: new Date(),
       updatedAt: new Date(),
     });
+    user.save()
     res.json({ message: "Usuario Creado!"});
   } catch (error) {
     console.log(error);

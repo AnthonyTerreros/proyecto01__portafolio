@@ -10,9 +10,11 @@
                 <div class="mt-3 mb-4">
                   <i class="bi bi-person-circle icon-display"></i>
                 </div>
-                <h4 class="mb-2">John Doe</h4>
-                <p class="text-muted mb-4">@User <span class="mx-2">|</span> <a
-                    href="#!">correo@gmail.com</a></p>
+                <h4 class="mb-2">{{user.nombre}}</h4>
+                <p class="text-muted mb-4">@{{user.rol}} <span class="mx-2">|</span> <a
+                    href="#!">{{user.correo}} </a></p>
+                <p class="text-muted mb-4">{{user.direccion}} </p>
+                <p class="text-muted mb-4">Desde: {{user.createdAt}} </p>
                 <button (click)="handleLogout()" type="button" class="btn btn-danger btn-rounded btn-lg">
                   Salir
                 </button>

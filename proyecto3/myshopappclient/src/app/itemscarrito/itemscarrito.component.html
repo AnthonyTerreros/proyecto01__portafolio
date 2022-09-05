@@ -1,0 +1,23 @@
+<div class="my-1 container row px-1 py-2">
+    <div class="col">
+        <img src="{{producto.nombre}}" alt="{{producto.nombre}}">
+    </div>
+    <div class="col">
+        <div class="d-flex flex-column">
+            <p>{{producto.nombre}}</p>
+            <p>Cantidad: {{item.cantidad}}</p>
+            <p class="fs-bold blue-500">Precio: $ {{producto.precio}}</p>
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center gap-2">
+        <button class="btn btn-primary" (click)="restarItem()">
+            -
+        </button>
+        <span class="text-center">
+            {{item.cantidad}}
+        </span>
+        <button class="btn btn-primary" (click)="sumarItem()">
+            +
+        </button>
+    </div>
+</div>

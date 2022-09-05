@@ -23,6 +23,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
+import { ItemscarritoComponent } from './itemscarrito/itemscarrito.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
     IngresarComponent,
     RegistrarComponent,
     ProfileComponent,
+    ItemscarritoComponent,
   ],
   imports: [
     BrowserModule,

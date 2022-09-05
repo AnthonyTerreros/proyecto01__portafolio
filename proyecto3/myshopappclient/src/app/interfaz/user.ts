@@ -11,3 +11,14 @@ export interface UserResponse {
     message: string,
     role: Roles
 }
+
+export interface UserProfile {
+    correo: string;
+    createdAt: string;
+    direccion: string;
+    id: 3
+    nombre: string;
+    rol: string;
+    updatedAt: string;
+    username: string;
+}
